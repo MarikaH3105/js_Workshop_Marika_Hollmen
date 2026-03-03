@@ -57,5 +57,24 @@
         });
     </script> <br/>
 
+    <h1>Excerice 4</h1> <br />
+    <h1 id="message">Processing...</h1>
+
+    <script>
+        // The confirm() dialog is a BOM method that returns a boolean
+        const isStudent = confirm("Are you a student?");
+
+        // Select the heading element to display the result
+        const display = document.getElementById("message");
+
+        if (isStudent) {
+            // User clicked OK (true)
+            display.textContent = "Welcome student";
+        } else {
+            // User clicked Cancel (false)
+            display.textContent = "Sorry, this page is for students only";
+        }
+    </script> <br/>
+
 </body>
 </html>
