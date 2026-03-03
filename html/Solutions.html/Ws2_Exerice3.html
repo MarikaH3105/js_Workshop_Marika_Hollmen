@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM Tehtävä</title>
+</head>
+<body>
+
+    <h2>Selaintesti (BOM)</h2>
+    <button id="go">Check browser & go</button>
+    <p id="info"></p>
+
+    <script>
+        // Haetaan nappi DOM-rajapinnan kautta
+        const nappi = document.getElementById('go');
+
+        nappi.addEventListener('click', () => {
+            // 1. Käytetään navigator-objektia (BOM)
+            const ua = navigator.userAgent;
+            const isMozilla = ua.includes('Mozilla');
+
+            // Näytetään tieto käyttäjälle
+            document.getElementById('info').textContent = 'Mozilla detected? ' + isMozilla;
+
+            // 2. Käytetään location-objektia (BOM) uudelleenohjaukseen
+            if (isMozilla) {
+                // Jos 'Mozilla' löytyy, mennään mozilla.org
+                window.location.href = 'https://www.mozilla.org';
+            } else {
+                // Muussa tapauksessa toiselle sivustolle
+                window.location.href = 'https://www.example.com';
+            }
+        });
+    </script>
+
+</body>
+</html>

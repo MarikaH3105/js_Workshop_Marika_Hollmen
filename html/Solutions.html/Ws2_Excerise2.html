@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Ws2_Exerice2</title>
+</head>
+<body>
+
+    
+    <div id="output"></div>
+    <script>
+        function repeatingText() {
+            // Valitaan elementti, johon teksti tulostetaan
+            const container = document.getElementById("output");
+            const viesti = "Hello World!"
+
+            // Silmukka, joka suoritetaan 50 kertaa
+            for (let i = 0; i < 50; i++) {
+                container.innerHTML += viesti;
+            }
+        }
+
+        // Kutsutaan funktiota, jotta teksti ilmestyy sivulle
+        repeatingText();
+    </script>
+
+</body>
+</html>

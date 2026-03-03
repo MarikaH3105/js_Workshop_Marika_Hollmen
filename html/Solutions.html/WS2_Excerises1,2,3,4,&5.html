@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">   
+<head>
+    <meta charset="UTF-8">
+    <title>JS-WS2_Excerices 1,2,3,4 & </title>
+</head>
+<body>
+   
+
+    <h1>Excerice 1</h1> <br />
+     <p> <em><strong>"If I had nine hours to chop down a tree, I'd spend the first six sharpening my ax."</strong> <br />
+		  -- Abraham Lincoln</em></p> <br/>
+  
+       <h1>Excerice 2</h1> <br />
+       <div id="output"></div>
+    <script>
+        function repeatingText() {
+            // choo
+            const container = document.getElementById("output");
+            const viesti = "Hello World!"
+
+            // Loop wich runs30 times
+            for (let i = 0; i < 30; i++) {
+                container.innerHTML += viesti;
+            }
+        }
+
+        // calls the function to display the text on the page
+        repeatingText();
+    </script> <br/>
+
+    <h1>Excerice 3</h1> <br />
+    <button id="go">Check browser & go</button>
+    <p id="info"></p>
+
+    <script>
+        // Select the button via the DOM interface
+        const button = document.getElementById('go');
+
+        button.addEventListener('click', () => {
+            // 1. Using the navigator object (BOM)
+            const ua = navigator.userAgent;
+            const isMozilla = ua.includes('Mozilla');
+
+            // Display information to the user
+            document.getElementById('info').textContent = 'Mozilla detected? ' + isMozilla;
+
+            // 2. Using the location object (BOM) for redirection
+            if (isMozilla) {
+                // If 'Mozilla' is found, go to mozilla.org
+                window.location.href = 'https://www.mozilla.org';
+            } else {
+                // Otherwise, go to another site
+                window.location.href = 'https://www.example.com';
+            }
+        });
+    </script> <br/>
+
+</body>
+</html>
